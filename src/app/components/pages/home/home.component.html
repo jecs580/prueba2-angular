@@ -1,16 +1,16 @@
 <div class="container">
-    <mat-card class="post-card" *ngFor="let post of posts">
+    <mat-card class="post-card" *ngFor="let post of posts1;let indice=index">
         <mat-card-header>
             <mat-card-title>
                 <a [routerLink]="['/post',post.id]">
-                    {{post.titlePost}}
+                    {{post.title}}
                 </a>
             </mat-card-title>
         </mat-card-header>
-        <img matCardImage [src]="post.imagePost">
+        <img matCardImage [src]="post.image">
         <mat-card-content>
             <p>
-                {{post.contentPost}}
+                {{post.body}}
             </p>
         </mat-card-content>
     </mat-card>
