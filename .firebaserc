@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "ngblog-e7b56": {
+      "hosting": {
+        "prueba2": [
+          "ngblog-e7b56"
+        ]
+      }
+    }
+  }
+}
