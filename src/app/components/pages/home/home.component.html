@@ -1,5 +1,5 @@
 <div class="container">
-    <mat-card class="post-card" *ngFor="let post of posts">
+    <mat-card class="post-card" *ngFor="let post of post$ |async">
         <mat-card-header>
             <mat-card-title>
                 <a [routerLink]="['/post',post.id]">
