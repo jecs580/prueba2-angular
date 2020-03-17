@@ -20,4 +20,7 @@ export class PostService {
         )
       );
   }
+  public retrievePost(idPost:string):Observable<Post>{
+    return this.afs.doc<Post>(`post/${idPost}`).valueChanges();
+  }
 }
