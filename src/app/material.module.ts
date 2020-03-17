@@ -7,7 +7,9 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list';
-
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {MatDividerModule} from '@angular/material/divider';
+import {MatChipsModule} from '@angular/material/chips';
 const myModule = [
   MatButtonModule,
   MatCardModule,
@@ -15,7 +17,10 @@ const myModule = [
   MatToolbarModule,
   MatIconModule,
   MatSidenavModule,
-  MatListModule
+  MatListModule,
+  MatProgressSpinnerModule,
+  MatDividerModule,
+  MatChipsModule
 ]; // Constante que nos ayudara a agrupar todos los modulos angularMaterial
 
 @NgModule({
