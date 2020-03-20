@@ -12,6 +12,9 @@ import {MatDividerModule} from '@angular/material/divider';
 import {MatChipsModule} from '@angular/material/chips';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
+import {MatTableModule} from '@angular/material/table';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatSortModule} from '@angular/material/sort';
 const myModule = [
   MatButtonModule,
   MatCardModule,
@@ -24,7 +27,10 @@ const myModule = [
   MatDividerModule,
   MatChipsModule,
   MatFormFieldModule,
-  MatInputModule
+  MatInputModule,
+  MatTableModule,
+  MatPaginatorModule,
+  MatSortModule
 ]; // Constante que nos ayudara a agrupar todos los modulos angularMaterial
 
 @NgModule({
