@@ -42,7 +42,7 @@ import { ModalComponent } from './shared/components/modal/modal.component';
   ],
   entryComponents:[ModalComponent],
   providers: [
-    { provide: StorageBucket, useValue: 'gs://ngblog-e7b56.appspot.com ' }
+    { provide: StorageBucket, useValue: 'gs://ngblog-e7b56.appspot.com' }
   ],
   bootstrap: [AppComponent]
 })

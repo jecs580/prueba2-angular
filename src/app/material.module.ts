@@ -16,6 +16,7 @@ import {MatTableModule} from '@angular/material/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatSortModule} from '@angular/material/sort';
 import {MatDialogModule} from '@angular/material/dialog';
+import {MatSelectModule} from '@angular/material/select';
 const myModule = [
   MatButtonModule,
   MatCardModule,
@@ -32,7 +33,8 @@ const myModule = [
   MatTableModule,
   MatPaginatorModule,
   MatSortModule,
-  MatDialogModule
+  MatDialogModule,
+  MatSelectModule
 ]; // Constante que nos ayudara a agrupar todos los modulos angularMaterial
 
 @NgModule({
