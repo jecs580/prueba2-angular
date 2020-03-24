@@ -35,22 +35,29 @@ export class PostService {
   public deletePost(post: Post) {
     return this.postsCollection.doc(post.id).delete();
   }
-  public updatePost(post: Post) {
-    return this.postsCollection.doc(post.id).update(post);
+  public updatePost(post: Post, newImage?: File) {
+    if (newImage) {
+      this.uploadImage(post, newImage);
+    } else {
+      return this.postsCollection.doc(post.id).update(post);
+    }
   }
-  public preAddUpdatePost(post:Post, image:File): void{
-    this.uploadImage(post,image);
+  public preAddUpdatePost(post: Post, image: File): void {
+    this.uploadImage(post, image);
   }
-  private savePost(post: Post){
-    const postObj= {
-      titlePost:post.titlePost,
-      contentPost:post.contentPost,
-      imagePost:this.downloadURL,
-      fileRef:this.filePath,
-      tagsPost:post.tagsPost
+  private savePost(post: Post) {
+    const postObj = {
+      titlePost: post.titlePost,
+      contentPost: post.contentPost,
+      imagePost: this.downloadURL,
+      fileRef: this.filePath,
+      tagsPost: post.tagsPost
     };
-    // TODO editPost
-    this.postsCollection.add(postObj);
+    if (post.id) {
+      return this.postsCollection.doc(post.id).update(postObj);
+    } else {
+      return this.postsCollection.add(postObj);
+    }
   }
   private uploadImage(post: Post, image: File) {
     this.filePath = `images/${image.name}`;
@@ -63,10 +70,10 @@ export class PostService {
             this.downloadURL = urlImage;
             this.savePost(post)
           },
-          error => {
-            console.log('Error de no se donde ptm',error);
-            
-          }
+            error => {
+              console.log('Error de no se donde ptm', error);
+
+            }
           );
         })
       ).subscribe();
