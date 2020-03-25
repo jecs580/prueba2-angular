@@ -33,7 +33,6 @@ export class ProfileComponent implements OnInit {
   }
 
   private initValueForm(user:User):void{
-    debugger
     if(user){
       if (user.photoURL) {
         this.currentImage=user.photoURL;
