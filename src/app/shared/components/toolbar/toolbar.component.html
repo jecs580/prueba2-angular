@@ -3,7 +3,7 @@
     <span class="fill-remaining-space"></span>
     
     <a routerLink="/admin" routerLinkActive="active"
-    *ngIf="authService.userData | async">
+    *ngIf="authService.userData$ | async">
         <button mat-button >Admin</button>
     </a>
     
@@ -11,7 +11,7 @@
         <button mat-button >About</button>
     </a>
 
-    <a *ngIf="authService.userData | async; else showlogin" (click)="signOut()">
+    <a *ngIf="authService.userData$ | async; else showlogin" (click)="signOut()">
         <button mat-button >Logout</button>
     </a>
     <ng-template #showlogin>
