@@ -83,7 +83,7 @@ export class TableComponent implements OnInit, AfterViewInit {
   openDialog(post?: Post):void{
     const config = {
       data:{
-        message: post? 'Editar Publicacion': 'Nuevo Publicacion',
+        message: post? 'Editar Publicacion': 'Nueva Publicacion',
         content:post
       }
     };

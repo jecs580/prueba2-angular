@@ -4,8 +4,9 @@ import { CommonModule } from '@angular/common';
 import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home.component';
 import  {MaterialModule} from '../../../material.module';
+import { PostComponent } from '../../post/post/post.component';
 @NgModule({
-  declarations: [HomeComponent],
+  declarations: [HomeComponent, PostComponent],
   imports: [
     CommonModule,
     HomeRoutingModule,
