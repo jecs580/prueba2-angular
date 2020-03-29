@@ -35,12 +35,12 @@ export class AuthService {
     }).catch(error => {
       console.log('Error', error);
 
-    })
+    });
   }
   preSaveUserProfile(user: User, image?: File): void {
     if (image) {
       this.uploadImage(user, image);
-    }else{
+    } else {
       this.saveUserProfile(user);
     }
   }

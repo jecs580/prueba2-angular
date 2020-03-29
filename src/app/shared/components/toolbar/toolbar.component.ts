@@ -8,12 +8,12 @@ import { AuthService } from '../../services/auth.service';
 })
 export class ToolbarComponent implements OnInit {
 
-  public appName='NgBlog'
-  constructor(public authService:AuthService) { }
+  public appName = 'NgBlog';
+  constructor(public authService: AuthService) { }
 
   ngOnInit(): void {
   }
-  signOut(){
+  signOut() {
     this.authService.logout();
   }
 }

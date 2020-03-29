@@ -9,13 +9,13 @@ import { NewPostModule } from './components/post/new-post/new-post.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
 import { ToolbarComponent } from './shared/components/toolbar/toolbar.component';
-import {ReactiveFormsModule} from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 // Firebase
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule, StorageBucket } from '@angular/fire/storage';
 import { AngularFireModule } from '@angular/fire';
-import {AngularFireAuthModule} from '@angular/fire/auth';
+import { AngularFireAuthModule } from '@angular/fire/auth';
 import { environment } from 'src/environments/environment';
 import { ContainerAppComponent } from './components/pages/container-app/container-app.component';
 import { ModalComponent } from './shared/components/modal/modal.component';
@@ -45,7 +45,7 @@ import { DetailPostComponent } from './components/post/detail-post/detail-post.c
     ReactiveFormsModule,
     EditPostModule
   ],
-  entryComponents:[ModalComponent],
+  entryComponents: [ModalComponent],
   providers: [
     { provide: StorageBucket, useValue: 'gs://ngblog-e7b56.appspot.com' }
   ],

@@ -9,15 +9,15 @@ import { Post } from 'src/app/shared/models/post.interface';
   styleUrls: ['./detail-post.component.scss']
 })
 export class DetailPostComponent implements OnInit {
-  public post$:Observable<Post>;
+  public post$: Observable<Post>;
   constructor(
-    private route:ActivatedRoute,
-    private postsService:PostService
+    private route: ActivatedRoute,
+    private postsService: PostService
   ) { }
 
   ngOnInit(): void {
-    const idPost=this.route.snapshot.params.id; // El nombre del parametro es el que pusimos en el archivo de modulo rutas.
-    this.post$=this.postsService.retrievePost(idPost);
+    const idPost = this.route.snapshot.params.id; // El nombre del parametro es el que pusimos en el archivo de modulo rutas.
+    this.post$ = this.postsService.retrievePost(idPost);
   }
 
 }

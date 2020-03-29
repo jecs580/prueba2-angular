@@ -5,21 +5,21 @@ import { ContainerAppComponent } from './components/pages/container-app/containe
 
 const routes: Routes = [
   {
-    path: '', component:ContainerAppComponent,
-    children:[
+    path: '', component: ContainerAppComponent,
+    children: [
       {
-        path: 'home', loadChildren: () => import('./components/pages/home/home.module').then(m => m.HomeModule) 
-       },
-       {
-        path: 'post/:id', component:DetailPostComponent
-       },
-       { path: 'about', loadChildren: () => import('./components/pages/about/about.module').then(m => m.AboutModule) },
-       {
-         path:'', redirectTo:'home', pathMatch:'full'
-       }
+        path: 'home', loadChildren: () => import('./components/pages/home/home.module').then(m => m.HomeModule)
+      },
+      {
+        path: 'post/:id', component: DetailPostComponent
+      },
+      { path: 'about', loadChildren: () => import('./components/pages/about/about.module').then(m => m.AboutModule) },
+      {
+        path: '', redirectTo: 'home', pathMatch: 'full'
+      }
     ]
   },
-  
+
   { path: 'admin', loadChildren: () => import('./components/admin/admin.module').then(m => m.AdminModule) },
   { path: 'login', loadChildren: () => import('./components/auth/login/login.module').then(m => m.LoginModule) }
 ];

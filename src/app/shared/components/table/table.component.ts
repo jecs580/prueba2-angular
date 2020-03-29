@@ -7,7 +7,7 @@ import { PostService } from './../../../components/post/post.service';
 import { Post } from '../../models/post.interface';
 
 import Swal from 'sweetalert2';
-import {MatDialog} from '@angular/material/dialog';
+import { MatDialog } from '@angular/material/dialog';
 import { ModalComponent } from './../modal/modal.component';
 
 @Component({
@@ -21,7 +21,7 @@ export class TableComponent implements OnInit, AfterViewInit {
 
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
   @ViewChild(MatSort, { static: true }) sort: MatSort;
-  constructor(private postService: PostService, public dialog:MatDialog) { }
+  constructor(private postService: PostService, public dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.postService.getAllPost().subscribe(
@@ -45,12 +45,12 @@ export class TableComponent implements OnInit, AfterViewInit {
   }
   onNewPost() {
     // console.log('New post')
-    this.openDialog()
+    this.openDialog();
   }
   onEditPost(post: Post) {
     console.log('Edit', post);
-    this.openDialog(post)
-    
+    this.openDialog(post);
+
   }
   onDeletePost(post: Post) {
     Swal.fire({
@@ -73,29 +73,29 @@ export class TableComponent implements OnInit, AfterViewInit {
           ).catch(
             (error) => {
               Swal.fire('¡Error!', 'Se produjo un error al eliminar esta publicación.', 'error');
-              console.log("Error al eliminar", error);
+              console.log('Error al eliminar', error);
             }
           );
         }
       }
     );
   }
-  openDialog(post?: Post):void{
+  openDialog(post?: Post): void {
     const config = {
-      data:{
-        message: post? 'Editar Publicacion': 'Nueva Publicacion',
-        content:post
+      data: {
+        message: post ? 'Editar Publicacion' : 'Nueva Publicacion',
+        content: post
       }
     };
 
-    const dialogRef=this.dialog.open(ModalComponent,config);
+    const dialogRef = this.dialog.open(ModalComponent, config);
     dialogRef.afterClosed().subscribe(
-      res =>{
+      res => {
         console.log(res);
       },
       error => {
         console.log(error);
       }
-    )
+    );
   }
 }

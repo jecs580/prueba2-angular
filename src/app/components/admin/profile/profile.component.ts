@@ -9,13 +9,13 @@ import { File } from './../../../shared/models/file.interface';
   styleUrls: ['./profile.component.scss']
 })
 export class ProfileComponent implements OnInit {
-  public image:File;
-  public currentImage='https://i.picsum.photos/id/514/150/150.jpg';
-  
+  public image: File;
+  public currentImage = 'https://i.picsum.photos/id/514/150/150.jpg';
+
   constructor(private authService: AuthService) { }
   public profileForm = new FormGroup({
     displayName: new FormControl('', Validators.required),
-    email: new FormControl({value:'',disabled:true},Validators.required), // desabilitaremos el campo
+    email: new FormControl({ value: '', disabled: true }, Validators.required), // desabilitaremos el campo
     photoURL: new FormControl('', Validators.required),
 
   });
@@ -25,29 +25,29 @@ export class ProfileComponent implements OnInit {
       user => {
         this.initValueForm(user);
       },
-      error =>{
+      error => {
         console.log('Error aqui', error);
-        
+
       }
     );
   }
 
-  private initValueForm(user:User):void{
-    if(user){
+  private initValueForm(user: User): void {
+    if (user) {
       if (user.photoURL) {
-        this.currentImage=user.photoURL;
+        this.currentImage = user.photoURL;
       }
       this.profileForm.patchValue({
-        displayName:user.displayName,
-        email:user.email,
-      })
+        displayName: user.displayName,
+        email: user.email,
+      });
     }
 
   }
-  onSaveUser(user:User):void{
+  onSaveUser(user: User): void {
     this.authService.preSaveUserProfile(user, this.image);
   }
-  handleImage(image:File):void{
-    this.image=image
+  handleImage(image: File): void {
+    this.image = image;
   }
 }

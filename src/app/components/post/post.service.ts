@@ -68,7 +68,7 @@ export class PostService {
         finalize(() => {
           fileRef.getDownloadURL().subscribe(urlImage => {
             this.downloadURL = urlImage;
-            this.savePost(post)
+            this.savePost(post);
           },
             error => {
               console.log('Error de no se donde ptm', error);

@@ -8,10 +8,10 @@ import { PostService } from './../../post/post.service';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  public post$:Observable<Post[]>  
-  constructor(private postService:PostService) { }
+  public post$: Observable<Post[]>;
+  constructor(private postService: PostService) { }
 
   ngOnInit(): void {
-    this.post$=this.postService.getAllPost();
+    this.post$ = this.postService.getAllPost();
   }
 }
